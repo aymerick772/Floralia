@@ -1,0 +1,29 @@
+/* Style global pour le filtre des produits */
+.product-filter {
+  margin: 20px 0;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+}
+
+/* Style pour l'étiquette du filtre */
+.product-filter label {
+  font-size: 1.1em;
+  margin-right: 10px;
+}
+
+/* Style pour le menu déroulant */
+.product-filter select {
+  font-size: 1em;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background-color: #fff;
+  cursor: pointer;
+}
+
+/* Style pour le texte de l'étiquette et la taille du sélecteur */
+.product-filter label, .product-filter select {
+  vertical-align: middle;
+}

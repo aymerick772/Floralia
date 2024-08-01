@@ -1,0 +1,6 @@
+<div class="product-filter">
+  <label for="categorySelector">Category:</label>
+  <select id="categorySelector" #categorySelector (change)="filterByCategory(categorySelector.value)">
+    <option *ngFor="let category of categories" [value]="category">{{ category }}</option>
+  </select>
+</div>

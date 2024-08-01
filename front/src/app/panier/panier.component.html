@@ -1,0 +1,7 @@
+<div>
+  <h2>Shopping Cart</h2>
+  <div *ngFor="let item of cartItems">
+    <app-panier-item [item]="item"></app-panier-item>
+  </div>
+  <app-panier-summary [items]="cartItems"></app-panier-summary>
+</div>
