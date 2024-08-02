@@ -1,0 +1,23 @@
+import { ComponentFixture, TestBed } from '@angular/core/testing';
+
+import { PanierSummaryComponent } from './panier-summary.component';
+
+describe('PanierSummaryComponent', () => {
+  let component: PanierSummaryComponent;
+  let fixture: ComponentFixture<PanierSummaryComponent>;
+
+  beforeEach(async () => {
+    await TestBed.configureTestingModule({
+      imports: [PanierSummaryComponent]
+    })
+    .compileComponents();
+
+    fixture = TestBed.createComponent(PanierSummaryComponent);
+    component = fixture.componentInstance;
+    fixture.detectChanges();
+  });
+
+  it('should create', () => {
+    expect(component).toBeTruthy();
+  });
+});

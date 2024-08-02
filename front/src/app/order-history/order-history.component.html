@@ -1,0 +1,6 @@
+<div>
+  <h2>Order History</h2>
+  <div *ngFor="let order of orders">
+    <p>Order #{{ order.id }} - {{ order.total | currency }}</p>
+  </div>
+</div>

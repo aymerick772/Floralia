@@ -1,0 +1,35 @@
+/* Style pour un élément de produit */
+.product-item {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 16px;
+  margin: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  background-color: #fff;
+}
+
+.product-item h3 {
+  font-size: 1.2em;
+  margin: 0 0 10px;
+}
+
+.product-item p {
+  margin: 5px 0;
+  font-size: 1em;
+}
+
+.product-item button {
+  padding: 10px 15px;
+  font-size: 1em;
+  color: #fff;
+  background-color: #007bff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.product-item button:hover {
+  background-color: #0056b3;
+}
