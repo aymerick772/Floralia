@@ -1,6 +1,7 @@
 import {Component, Input} from '@angular/core';
 import {CommonModule} from "@angular/common";
 import {PanierService} from "../services/panier.service";
+import {ApiService} from "../services/api.service";
 
 @Component({
   selector: 'app-product-item',
@@ -12,10 +13,8 @@ import {PanierService} from "../services/panier.service";
 })
 export class ProductItemComponent {
   @Input() product: any;
-  constructor(private panierService: PanierService) { }
+  constructor(private panierService: PanierService, private apiService: ApiService) { }
   addToCart(product: any) {
-    alert('Product added to cart:'+ product);
-
     // Ajoutez ici la logique pour ajouter le produit au panier
     this.panierService.addToCart(product);
   }

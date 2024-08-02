@@ -1,10 +1,24 @@
-<div *ngIf="products$ | async as products; else loading">
-  <ul>
-    <li *ngFor="let product of products">
-      <app-product-item [product]="product"></app-product-item>
-    </li>
-  </ul>
+
+
+<div class="container">
+  <div class="container" *ngIf="(products | async) as data">
+    <div *ngFor="let flower of data.fleurs" class="card">
+      <h2>{{ flower.nom }}</h2>
+      <pre>{{ flower | json }}
+        <app-product-item [product]="flower"></app-product-item>
+      </pre>
+
+    </div>
+  </div>
 </div>
+
+<!--<div *ngIf="product  as productss; else loading">-->
+<!--  <ul>-->
+<!--    <li *ngFor="let product of productss">-->
+<!--      <app-product-item [product]="product"></app-product-item>-->
+<!--    </li>-->
+<!--  </ul>-->
+<!--</div>-->
 
 <ng-template #loading>
   <p>Loading products...</p>

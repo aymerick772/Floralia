@@ -18,6 +18,6 @@ export class PanierSummaryComponent {
   }
 
   getTotalPrice(): number {
-    return this.items.reduce((total, item) => total + (item.quantity * item.product.price), 0);
+    return this.items.reduce((total, item) => total + (item.quantity * item.product.id), 0);
   }
 }
