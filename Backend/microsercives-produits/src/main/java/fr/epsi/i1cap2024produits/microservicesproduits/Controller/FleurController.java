@@ -65,7 +65,6 @@ public class FleurController {
     @GetMapping("/fleurss")
     public String getFleurs(@RequestParam("callback") String callback) {
         List<Fleur> fleurs = fleurService.getAllFleurs();
-        System.out.println("JEPASSISIS");
         // Exemple de données JSON
         Map<String, Object> fleursData = Collections.singletonMap("fleurs",fleurs);
 

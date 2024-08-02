@@ -1,20 +1,39 @@
-/* Style global pour la liste des produits */
-.product-list {
+/* Style général pour le conteneur principal */
+.container {
   padding: 20px;
-}
-
-.product-list h2 {
-  font-size: 1.5em;
-  margin-bottom: 20px;
-}
-
-.product-list-item {
+  background-color: #f9f9f9;
+  border-radius: 8px;
   display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
+  flex-wrap: wrap; /* Permet aux éléments de se placer sur plusieurs lignes si nécessaire */
+  gap: 10px; /* Espacement entre les cartes */
 }
 
-.product-list-item > * {
-  flex: 1 1 calc(33.333% - 20px);
-  box-sizing: border-box;
+/* Style pour chaque carte */
+.card {
+  flex: 1 1 calc(25% - 20px); /* Occupe environ 25% de la largeur du conteneur, moins l'espacement */
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  padding: 15px;
+  box-sizing: border-box; /* Inclut le padding et la bordure dans la largeur totale */
+  overflow: hidden;
+}
+
+/* Style pour les données de la fleur */
+pre {
+  white-space: pre-wrap; /* Permet de gérer le retour à la ligne automatique */
+  background-color: #efefef;
+  padding: 10px;
+  border-radius: 4px;
+  font-family: monospace;
+  overflow: auto; /* Permet le défilement si le contenu est trop large */
+}
+
+/* Style pour les titres de fleurs */
+.card > h2 {
+  font-size: 1.2em;
+  font-weight: bold;
+  color: #333;
+  margin: 0 0 10px;
 }

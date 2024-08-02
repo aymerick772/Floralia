@@ -15,23 +15,48 @@ import {Observable, of} from "rxjs";
     CommonModule
   ],
   templateUrl: './product-list.component.html',
-  styleUrl: './product-list.component.css'
+  styleUrls: ['./product-list.component.css']
 })
 
 export class ProductListComponent implements OnInit {
-  products: any[] = [];
-  products$: Observable<any[]> =new Observable<any[]>();
+  product: any[] = [];
+  products: Observable<any> = of([]);
   //
   constructor(private apiService: ApiService, private productService: ProductService) { }
   //
   async ngOnInit() {
-    this.products = this.productService.getProducts();
+    // this.products = this.apiService.getProducts();
+    this.product = this.productService.getProducts();
 
-    this.products$ = await this.apiService.getProducts();
+    try {
+      const data = await this.apiService.getProducts().toPromise();
+      this.products = of(data);
+    } catch (error) {
+      console.error('Erreur lors de la récupération des produits', error);
+    }
     // Afficher les valeurs dans products$ avec subscribe
-    this.products$.subscribe(
-      products => alert('Products$: ' + JSON.stringify(products, null, 2)),
+    this.products.subscribe(
+      products => console.log('Products$: ' + JSON.stringify(products, null, 2)),
       error => console.log('Error fetching products$: ' + JSON.stringify(error, null, 2))
     );
   }
+
+
+  // async ngOnInit() {
+  //   // this.products$ = this.apiService.getProducts();
+  //   // this.products$.subscribe((
+  //   //   data => console.log('Produits récupérés :', data),
+  //   //     error => console.error('Erreur lors de la récupération des produits :', error)
+  //   // ));
+  //   try {
+  //     const data = await this.apiService.getProducts().toPromise();
+  //
+  //     this.products = data.fleurs;
+  //
+  //     console.log( JSON.stringify(this.products, null, 2));
+  //   } catch (error) {
+  //     console.error('Error fetching products$: ' + JSON.stringify(error, null, 2));
+  //   }
+  // }
+
 }
